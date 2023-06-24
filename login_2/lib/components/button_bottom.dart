@@ -1,21 +1,32 @@
 import 'package:flutter/material.dart';
 
-class ButonBottomFB extends StatelessWidget {
+class ButonBottom extends StatelessWidget {
   final String imagePath;
+  final colors;
+  final text;
+  final colorText;
 
-  const ButonBottomFB({
+  // final controller;
+  // final String Text;
+
+  const ButonBottom({
     super.key,
     required this.imagePath,
+    required this.colors,
+    required this.colorText,
+    required this.text,
+
+    //  required this.controller,required this.Text
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 50,
+      height: 46,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color.fromARGB(255, 23, 133, 223),
+          color: colors,
           boxShadow: const [
             BoxShadow(
                 color: Color.fromARGB(255, 175, 173, 173),
@@ -29,21 +40,23 @@ class ButonBottomFB extends StatelessWidget {
                 spreadRadius: 1.0),
           ]),
       child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              imagePath,
-              height: 30,
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Đăng nhập bằng Facebook',
-                style: TextStyle(color: Color.fromARGB(255, 252, 253, 253)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: Row(
+            children: [
+              Image.asset(
+                imagePath,
+                height: 35,
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Text(
+                  text,
+                  style: TextStyle(color: colorText),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_2/components/botton_bottomfb.dart';
-import 'package:login_2/components/botton_bottomgg.dart';
-import 'package:login_2/components/button_bottomzl.dart';
+import 'package:login_2/components/button_bottom.dart';
 import 'package:login_2/components/button_login.dart';
 import 'package:login_2/components/textfild_login.dart';
 import 'package:login_2/config/const.dart';
@@ -9,6 +7,9 @@ import 'package:login_2/config/const.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
+// final logoA = TextEditingController();
+// final logoB = TextEditingController();
+// final logoC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -88,15 +89,28 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
-                  ButonBottomZL(imagePath: 'assets/image/Zalo.png'),
+                  ButonBottom(
+                      imagePath: 'assets/image/Zalo.png',
+                      colors: Colors.white,
+                      colorText: Colors.blue,
+                      text: 'Đăng nhập bằng Zalo'),
+                  // controller: logoA, child: Text( 'Zalo',),
                   SizedBox(
                     height: 20,
                   ),
-                  ButonBottomGG(imagePath: 'assets/image/gg.png'),
+                  ButonBottom(
+                      imagePath: 'assets/image/gg.png',
+                      colors: Colors.white,
+                      colorText: Colors.black,
+                      text: 'Đăng nhập bằng Google'),
                   SizedBox(
                     height: 20,
                   ),
-                  ButonBottomFB(imagePath: 'assets/image/fb.png'),
+                  ButonBottom(
+                      imagePath: 'assets/image/fb.png',
+                      colors: Color(0xff1877F2),
+                      colorText: Colors.white,
+                      text: 'Đăng nhập bằng Facebook'),
                 ],
               ),
             )
